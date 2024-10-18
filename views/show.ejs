@@ -1,0 +1,74 @@
+<% layout("/layout/boilerplate") %>
+<body>
+    <div class="detail-container">
+
+        <div class="image">
+            <img src="<%=data.image %>" alt="Place image">
+        </div>
+        <div class="content">
+            <p><b>Title:</b> <%= data.title%></p>
+        
+            <p><b>Description:</b> <%= data.description %></p>
+        
+            <p><b>Price:</b> &#x20B9;<%= data.price %> <span style="font-size: smaller;">(per night)</span></p>
+        
+            <p><b>Location:</b> <%= data.location %></p>
+        
+            <p><b>Country:</b> <%= data.country %></p>
+        
+            <br>
+            <div class="btns">
+                <div class="edit">
+                    <form method="GET" action="/wanderlust/edit/<%= data._id%>">
+                        <button  id="edt">Edit Info</button>
+                    </form>
+                </div>
+                <div class="booking">
+                    <form method="GET" action="/wanderlust/booking/<%= data._id %>">
+                        <button id="book">Booking</button>
+                    </form>
+                </div>
+                <div class="delete">
+                    <form method="POST" action="/wanderlust/delete/<%= data._id%>?_method=Delete">
+                        <button  id="dlt">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div class="review">
+            
+                <form action="/wanderlust/<%=data._id%>/reviews" method="POST">
+                    <div class="rating">
+                        <label for="rating" class="form-label">Rating: </label>
+                        <input type="range" class="form-range" min="1" max="5" id="rating" name="review[rating]" required>
+                    </div>
+                    <div class="comment">
+                        <label for="comment" class="form-label">Comment: </label>
+                        <textarea id="comment" rows="2" cols="80" style="border-radius: 15px; padding: 10px;"  name="review[comment]" placeholder="Comment..." required></textarea>
+                    </div><br>
+                    <button class="btn btn-outline-dark">Submit</button>
+                    
+
+                </form>
+            </div>
+            <hr>
+            <h3>All Comments</h3>
+            <% for(let review of data.reviews){ %>
+
+                <div class="card ms-3" style="width: 35rem;margin-top: 30px; background-color: whitesmoke; border-radius: 30px;">
+                    <div class="card-body mb-4">
+                        <h6 class="card-subtitle text-body-secondary">Roya rogye</h6>
+                        <p class="card-text"><span style="font-weight: 600;">Comment:</span> <%= review.comment %></p>
+                        <p class="card-text"><span style="font-weight: 600;">Rating:</span> <%= review.rating %> stars</p>
+                    </div>
+                </div>
+            <% } %>
+            <br>
+
+        </div>
+    </div>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

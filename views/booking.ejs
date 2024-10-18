@@ -1,0 +1,33 @@
+<% layout("/layout/boilerplate") %>
+<body>
+    <div class="booking-container" style="height: 100vh; display: flex; text-align: center;justify-content: center;">
+        <div class="card" style="width: 40rem;background-color: #CADCFC;border: none;">
+            
+            <div class="card-body" style="background-color: #89ABE3;margin: 20px 0 0 0; border-radius: 5rem;" >
+              <h3 style="font-weight: 900;">Booking</h3>  
+              
+              <div class="booking-main-content"style="font-size:large;margin: 4rem 0 2rem 0;">
+                <h4 class="card-title" style="margin-bottom: 1rem;">Detail of Place</h4>
+                <p class="card-text"><b>Title: </b> <%= data.title %></p>
+                <p class="card-text"><b>Price: </b> &#x20B9;<%= data.price %><small>(per night)  </small>(No-Tax)</p>
+                <p class="card-text"><b>Location: </b> <%= data.location %></p>
+                <p class="card-text"><b>Country: </b> <%= data.country %></p>
+              </div>
+
+              <div class="booking-btns" style="display: flex; justify-content: space-evenly; margin-top: 5rem;">
+                <a href="#" class="btn btn-primary">Booking Comform</a>
+                <a href="/wanderlust/show/<%= data._id %>" class="btn btn-primary" style="background-color: black; color:white" ><- Back</a>
+              </div>
+              
+              <div class="booking-content" style="margin: 4rem 0 0 0;">
+                <p style="font-weight: 900;">For another query you can contact with us</p>
+                
+                <pre style="font-weight: 900;color: white;">We love our customers, 
+        so feel free to visit during normal business hours.</pre>
+                <big >Thank you</big>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>

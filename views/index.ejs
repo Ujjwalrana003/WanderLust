@@ -1,0 +1,35 @@
+<% layout("/layout/boilerplate") %>
+
+<body>
+    <div class="container">
+
+        <div class="cards-container">
+            <% for(let listing of data){ %>
+                <div class="row-cards">
+                    <a href="/wanderlust/show/<%=listing._id%>">
+                        <div class="card">
+                            <div class="image">
+                                <img src="<%= listing.image %>" >
+                            </div>
+                            <div class="card-content" >
+                                <h4><b>Title:</b> <%= listing.title %></h4>
+                                <p><b>Price:</b> &#x20B9;<%=listing.price%> <span style="font-size: small;">(per night)</span></p>
+                                <p><b>Location:</b> <%= listing.location %></p>
+                                <p><b>Country:</b> <%= listing.country %></p>
+                            </div>
+                        </div>
+                    </a>
+
+                
+                </div>           
+            
+        <% } %>
+
+        </div>
+    </div>
+    
+    
+   
+</body>
+
+

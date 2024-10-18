@@ -1,0 +1,44 @@
+.foot{
+    position:fixed;
+    left: 0px;
+    bottom: 10px;
+    opacity: 0.8;
+    &:hover{
+        opacity: 1;
+    }
+}
+.text-center{
+    
+    margin-top: 25px;
+    background-color: #eff5ff;
+}
+.card-header a i{
+    color: black;
+}
+
+.card-body{
+    height:250px;
+}
+
+.card-body a{
+    text-decoration: none;
+
+}
+
+.card-body a span{
+    color: black;
+}
+
+.card-footer a{
+    text-decoration: none; 
+    font-size: larger;
+}
+
+.text-body-secondary a .fa-instagram{
+    color: purple;
+    
+}
+.text-body-secondary a .fa-whatsapp{
+    color: green;
+
+}
